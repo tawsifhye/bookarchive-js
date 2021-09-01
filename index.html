@@ -6,12 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Book</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        #output-field{
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            grid-row-gap: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="text-center">
-        <input class="w-50 my-5" type="text" placeholder="Enter book name" >
-        <button class="bg-primary text-white px-3">Search</button>
-    </div>
+    <!-- search field -->
+    <h1 class="text-danger text-center mt-2">Search Your Required Book</h1>
+    <section class="text-center">
+        <input id="search-field" class="w-50 mt-2" type="text" placeholder="Enter book name" >
+        <button id="search-btn" class="bg-primary text-white px-3">Search</button>
+    </section>
+    <!-- data count field -->
+    <section id="data-count" class="text-primary text-center py-2">
+
+    </section>
+    <!-- ouput field -->
+    <section id="output-field">
+        <!-- <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div> -->
+    </section>
     <script src="index.js"></script>
 </body>
 </html>
