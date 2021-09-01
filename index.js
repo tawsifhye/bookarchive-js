@@ -16,9 +16,7 @@ searchBtn.addEventListener('click', function(){
     searchField.value = '';
     outputFiled.innerHTML = '';
     dataCountFiled.innerHTML = '';
-    // console.log(searchText);
     const url = `http://openlibrary.org/search.json?q=${searchText}}`
-    // console.log(url);
     fetch(url)
     .then(res => res.json())
     .then(data => {
@@ -51,11 +49,6 @@ const loadData = books =>{
         if(publishedDate === '' || publishedDate == null){
             publishedDate = 'Unkown'
         }
-        /* div.innerHTML = `
-        <h3>${bookName}</h3>
-        <h4>${authorName}</h4>
-        </p>${publishedDate}</p>
-        ` */
         div.innerHTML = `
         <div class="card" style="width: 18rem;">
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book Image">
@@ -66,8 +59,7 @@ const loadData = books =>{
             </div>
           </div>
         `
-        
         outputFiled.appendChild(div);
-    })
+    });
    
 }
