@@ -1,4 +1,3 @@
-console
 const searchField = document.getElementById('search-field');
 const searchBtn = document.getElementById('search-btn');
 const outputFiled = document.getElementById('output-field');
