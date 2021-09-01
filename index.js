@@ -49,8 +49,8 @@ const loadData = books =>{
             publishedDate = 'Unkown'
         }
         div.innerHTML = `
-        <div class="card" style="width: 18rem;">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book Image">
+        <div class="card h-100 rounded-2"  style="width: 18rem;">
+            <img class="p-2" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book-Image">
             <div class="card-body">
             <h3>${bookName}</h3>
             <h5>Authors: ${authorName}</h5>
