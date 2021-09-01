@@ -1,3 +1,4 @@
+console
 const searchField = document.getElementById('search-field');
 const searchBtn = document.getElementById('search-btn');
 const outputFiled = document.getElementById('output-field');
@@ -6,16 +7,29 @@ let foundResult =0;
 
 searchBtn.addEventListener('click', function(){
     const searchText = searchField.value;
+    if(searchText === ''){
+        const h4 = document.createElement('h4');
+        h4.innerText = `Please Enter Book Name`
+        dataCountFiled.appendChild(h4);
+        return;
+    }
     searchField.value = '';
     outputFiled.innerHTML = '';
     dataCountFiled.innerHTML = '';
     // console.log(searchText);
-    const url = 'http://openlibrary.org/search.json?q=javascript'
+    const url = `http://openlibrary.org/search.json?q=${searchText}}`
     // console.log(url);
     fetch(url)
     .then(res => res.json())
     .then(data => {
+        console.log(data);
         const totalFound = data.numFound;
+        if(totalFound ===0 || totalFound == null){
+            const h4 = document.createElement('h4');
+            h4.innerText = `No book found`
+            dataCountFiled.appendChild(h4);
+            return;
+        }
         loadData(data.docs)
         const h4 = document.createElement('h4');
         h4.innerText = `Found Data: ${totalFound} Showing Data: ${foundResult}`
@@ -29,7 +43,7 @@ const loadData = books =>{
         // console.log(book)
         const div = document.createElement('div');
         const bookName = book.title;
-        let authorName = book.author_alternative_name;
+        let authorName = book.author_name;
         let publishedDate = book.first_publish_year;
         if(authorName === '' || authorName == null){
             authorName = 'Unkown'
@@ -44,14 +58,15 @@ const loadData = books =>{
         ` */
         div.innerHTML = `
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book Image">
             <div class="card-body">
             <h3>${bookName}</h3>
-            <h5>Author ${authorName}</h5>
+            <h5>Authors: ${authorName}</h5>
             </p>First Publish: ${publishedDate}</p>
             </div>
           </div>
         `
+        
         outputFiled.appendChild(div);
     })
    
