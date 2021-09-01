@@ -16,11 +16,11 @@ searchBtn.addEventListener('click', function(){
     searchField.value = '';
     outputFiled.innerHTML = '';
     dataCountFiled.innerHTML = '';
-    const url = `http://openlibrary.org/search.json?q=${searchText}}`
+    const url = `https://openlibrary.org/search.json?q=${searchText}}`
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         const totalFound = data.numFound;
         if(totalFound ===0 || totalFound == null){
             const h4 = document.createElement('h4');
