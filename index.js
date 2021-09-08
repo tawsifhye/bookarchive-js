@@ -53,13 +53,14 @@ const loadData = books =>{
         <div class="card h-100 rounded-2"  style="width: 18rem;">
             <img class="p-2" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book-Image">
             <div class="card-body">
-            <h3>${bookName}</h3>
-            <h5>Authors: ${authorName}</h5>
+            <h4>${bookName}</h4>
+            <h6>Authors: ${authorName}</h6>
             </p>First Publish: ${publishedDate}</p>
             </div>
           </div>
         `
         outputFiled.appendChild(div);
+        outputFiled.style.backgroundColor = 'beige';
     });
    
 }

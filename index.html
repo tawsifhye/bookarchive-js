@@ -5,31 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Book</title>
+    <!-- bootstrap import -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <style>
-        #output-field{
-            padding: 10px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            justify-items: center;
-            grid-row-gap: 20px;
-        }
-    </style>
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- search field -->
-    <h1 class="text-danger text-center mt-2">Search Your Required Book</h1>
+    <h1 class="text-white text-center mt-2">Search Your Required Book</h1>
     <section class="text-center">
         <input id="search-field" class="w-50 mt-2" type="text" placeholder="Enter book name" >
         <button id="search-btn" class="bg-primary text-white px-3">Search</button>
     </section>
     <!-- data count field -->
-    <section id="data-count" class="text-primary text-center py-2">
+    <section id="data-count" class="text-danger text-center py-2">
 
     </section>
     <!-- ouput field -->
-    <section id="output-field" class="card-group">
-          
+    <section id="output-field" class="card-group mx-4 mb-4">
+
     </section>
     <script src="index.js"></script>
 </body>
