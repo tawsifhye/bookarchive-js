@@ -56,7 +56,7 @@ const loadData = (books) => {
     }
     div.innerHTML = `
         <div class="card h-100 rounded-2"  style="width: 18rem;">
-            <img class="p-2" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="Book-Image">
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top p-2" alt="Book-Image">
             <div class="card-body">
             <h4>${bookName}</h4>
             <h6>Authors: ${authorName}</h6>
@@ -66,6 +66,5 @@ const loadData = (books) => {
           </div>
         `;
     outputFiled.appendChild(div);
-    outputFiled.style.backgroundColor = "beige";
   });
 };
